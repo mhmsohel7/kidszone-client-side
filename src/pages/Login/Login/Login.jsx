@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useContext, useRef } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { toast, ToastContainer } from "react-toastify";
 import loginImg from "../../../assets/login.png";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const { signInUser, googleSignIn, resetPassword } = useContext(AuthContext);
@@ -20,6 +20,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        console.log(loggedUser);
         toast.success("Successfully Login");
         navigate(from);
         e.target.reset();
@@ -34,6 +35,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
+        console.log(user);
         toast.success("successfully login with google");
         navigate(from);
       })
@@ -73,8 +75,8 @@ const Login = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-20 pb-7">
-      <h1 className="mb-5 text-2xl font-bold text-center underline">
-        Login E-Car Toys Store
+      <h1 className="mb-5 text-3xl font-bold text-center ">
+        Login KidZone Store
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
         <img src={loginImg} className="w-3/4 lg:w-full" alt="" />
@@ -91,7 +93,7 @@ const Login = () => {
                 required
               />
               <label
-                htmlFor="email"
+                htmlFor=""
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Email address
@@ -107,7 +109,7 @@ const Login = () => {
                 required
               />
               <label
-                htmlFor="password"
+                htmlFor=""
                 className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Password
@@ -133,7 +135,7 @@ const Login = () => {
               </Link>
             </p>
             <p className="text-lg mt-5">
-              New to E-Car Toys Store? Please
+              New to KidZone Store? Please
               <Link
                 className="text-orange-500 hover:underline ms-1"
                 to="/register"
