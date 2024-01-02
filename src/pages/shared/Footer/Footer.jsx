@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer footer-center p-10 bg-[#281652] text-white mt-10">
       <div>
         <img src={logo} className="w-24" alt="" />
-        <p className="font-bold text-2xl">KidZone Store</p>
+        <p className="font-bold text-2xl">E-Toy Car Store</p>
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div>
