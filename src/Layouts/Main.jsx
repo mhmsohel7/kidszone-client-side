@@ -4,6 +4,7 @@ import Footer from "../pages/shared/Footer/Footer";
 import Banner from "../pages/Home/Banner/Banner";
 import Gallery from "../pages/Home/Gallery/Gallery";
 import TabCategory from "../pages/Home/TabCategory/TabCategory";
+import Brands from "../pages/Home/Brands/Brands";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Gallery />
       <TabCategory />
       <Outlet />
+      <Brands />
       <Footer />
     </div>
   );
