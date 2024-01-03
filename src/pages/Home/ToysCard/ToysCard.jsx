@@ -1,6 +1,7 @@
 import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
 import "@smastrom/react-rating/style.css";
+import ToysModal from "./ToysModal";
 
 const ToysCard = () => {
   const allCarToys = useLoaderData();
@@ -32,9 +33,7 @@ const ToysCard = () => {
                 />
               </div>
               <div className="card-actions mt-3">
-                <Link to="/" className="btn btn-primary">
-                  View Details
-                </Link>
+                <ToysModal toyDetails={toys} />
               </div>
             </div>
           </div>
